@@ -9,7 +9,7 @@ import Shimmer from "./component/Shimmer";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "./component/useOnlineStatus";
-// import Grocery from "./component/Grocery";
+
 
 const restaurantList = [];
 
@@ -19,29 +19,29 @@ let Header = () => {
 
   return (
     <>
-      <header className="header">
+      <header className="flex justify-between shadow-lg bg-pink-100">
         <div className="logo-container">
           <img
-            className="logo"
+            className="w-24 m-1 p-1"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXf_R-yYdjq2AffaM2NxAatuYC_Z08MkweEw&usqp=CAU"
           />
         </div>
-        <div className="nav">
-          <ul>
-            <li>Online Status:{onlineStatus ? " On" : "Off"}</li>
-            <li>
+        <div className="flex items-center">
+          <ul className="flex p-4 m-4">
+            <li className="px-4 font-bold text-lg">Online Status:{onlineStatus ? " On" : "Off"}</li>
+            <li className="px-4 font-bold text-lg">
               <Link to="/">Home</Link>
-            </li>
-            <li>
+            </li> 
+            <li className="px-4 font-bold text-lg">
               <Link to="/about">About Us</Link>
             </li>
-            <li>
+            <li className="px-4 font-bold text-lg"> 
               <Link to="/contact">Contact Us</Link>
             </li>
-            <li>Cart</li>
-            <li><Link to="/grocery">Grocery</Link></li>
+            <li className="px-4 font-bold text-lg">Cart</li>
+            
             <button
-              className="login"
+              className="font-bold text-lg"
               onClick={() => {
                 btnNameReact === "Login"
                   ? setbtnNameReact("Logout")
@@ -80,19 +80,19 @@ let RestroCard_1 = ({
   cloudinaryImageId,
 }) => {
   return (
-    <div className="res-cards">
+    <div className="m-4 p-4 w-[250px] hover:bg-gray-100">
       <img
-        className="image"
+        className="rounded-md"
         src={
           "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
           cloudinaryImageId
         }
-      />
-      <h2> {name}</h2>
-      <h4> {cuisines.join(" ,")} </h4>
-      <h4>{avgRating} rating</h4>
-      <h4>{deliveryTime} minutes</h4>
-      <h4>Rs.{costForTwo / 100} for two </h4>
+      /> 
+      <h2 className="font-bold py-2 text-lg"> {name}</h2>
+      <h4 className="p-1"> {cuisines.join(" ,")} </h4>
+      <h4 className="p-1">{avgRating} rating</h4>
+      <h4 className="p-1">{deliveryTime} minutes</h4>
+      <h4 className="p-1">Rs.{costForTwo / 100} for two </h4>
     </div>
   );
 };
@@ -135,7 +135,7 @@ let Body = () => {
       <div className="body">
         <div className="filter">
           <button
-            className="search-btn"
+            className="search-btn m-4 px-4 py-2 bg-green-100"
             value={filteredList}
             onClick={() => {
               const setfilteredList1 = ListOfRestro.filter(
@@ -149,15 +149,15 @@ let Body = () => {
           </button>
           <input
             type="text"
-            className="search"
+            className="border border-solid border-black"
             value={searchText}
             onChange={(e) => {
               console.log(e.target.value, "searchteaxt");
               setsearchText(e.target.value);
             }}
           />
-          <button
-            className="btn"
+          <button 
+            className="px-4 py-2 bg-green-100 m-4 "
             value={filteredList}
             onClick={() => {
               const filteredData = ListOfRestro.filter((res) =>
@@ -169,7 +169,7 @@ let Body = () => {
             Search
           </button>
         </div>
-        <div className="restro-list">
+        <div className="flex flex-wrap">
           {filteredList.map((restaurant) => {
             return (
               <Link
@@ -188,15 +188,15 @@ let Body = () => {
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <div className="flex justify-between shadow-lg bg-pink-100 h-24 text-lg font-bold p-2">
       Created By:Pratiksha Wanjari
-      <h2 className="head">MOOD FOOD</h2>
+      <h2 className="text-lg font-bold p-10">MOOD FOOD</h2>
     </div>
   );
 };
 
 
-const Grocery=lazy(()=>import("./component/Grocery"));
+
 
 const Applayout = () => {
   return (
@@ -224,10 +224,6 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
-      },
-      {
-        path:"/grocery",
-        element:<Suspense fallback={<Shimmer/>}><Grocery/></Suspense>,
       },
       {
         path: "/restaurant/:resId",
