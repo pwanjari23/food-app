@@ -1,4 +1,4 @@
-import Shimmer from "./Shimmer";
+import Shimmer from "./Loading";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "./useRestaurantMenu";
 
