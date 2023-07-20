@@ -24,6 +24,37 @@ let RestroCard_1 = ({
     </div>
   );
 };
+
+
+// Higher Order Component
+
+// input--RestroCard_1==>RestroCard_1Promoted
+
+export const withPromotedLabel = (RestroCard_1) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-black text-white m-2 p-2 rounded-md">Promoted</label>
+        <RestroCard_1 {...props}/>
+      </div>
+    )
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default RestroCard_1;
 
 

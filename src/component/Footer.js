@@ -1,8 +1,3 @@
-
-
-
-
-
 const Footer = () => {
     return (
       <div className="flex justify-between shadow-lg bg-pink-100 h-24 text-lg font-bold p-2">
