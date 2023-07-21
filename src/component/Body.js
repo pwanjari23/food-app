@@ -15,8 +15,6 @@ let Body = () => {
 
   const RestaurantCardPromoted = withPromotedLabel(RestroCard_1);
 
-  console.log("body", ListOfRestro);
-
   useEffect(() => {
     fetchData();
   }, []);

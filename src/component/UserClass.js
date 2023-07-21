@@ -11,12 +11,12 @@ class UserClass extends React.Component {
       },
     };
 
-    console.log("child constructor");
+    // console.log("child constructor");
   }
 
   async componentDidMount() {
     // here the Dom update
-    console.log("child component did mount")
+    // console.log("child component did mount")
 
     const data = await fetch("https://api.github.com/users/pwanjari23");
     const json = await data.json();
@@ -25,11 +25,11 @@ class UserClass extends React.Component {
       userInfo: json,
     });
 
-    console.log(json);
+    // console.log(json);
   }
 
   render() {
-    console.log("child render");
+    // console.log("child render");
     // destructor
     const { name, location } = this.state.userInfo;
 
