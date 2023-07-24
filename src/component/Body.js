@@ -32,13 +32,8 @@ let Body = () => {
   };
   console.log("body");
 
-  const onlineStatus = useOnlineStatus();
-  if (onlineStatus === false)
-    return (
-      <h1>
-        Looks like you are offline!! Please check your internet connection;
-      </h1>
-    );
+ 
+  
 
   return ListOfRestro.length === 0 ? (
     <Loading />
