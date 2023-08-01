@@ -10,6 +10,7 @@ import Header from "./component/Header";
 import Footer from "./component/Footer";
 import { Provider } from "react-redux";
 import appStore from "./component/AppStore";
+import Cart from "./component/Cart";
 
 
 const Applayout = () => {
@@ -43,10 +44,10 @@ const appRouter = createBrowserRouter([
         path: "/restaurant/:resId",
         element: <Restromenu />,
       },
-      // {
-      //   path: "/cart",
-      //   element: <Cart />,
-      // }
+      {
+        path: "/cart",
+        element: <Cart />,
+      }
     ],
     errorElement: <Error />,
   },

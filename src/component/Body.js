@@ -40,9 +40,9 @@ let Body = () => {
   ) : (
     <>
       <div className="body">
-        <div className="filter">
+        <div className="p-2 m-2">
           <button
-            className="search-btn m-4 px-4 py-2 bg-green-100"
+            className="search-btn m-4 px-4 py-2 bg-green-100 "
             value={filteredList}
             onClick={() => {
               const setfilteredList1 = ListOfRestro.filter(
@@ -76,7 +76,7 @@ let Body = () => {
             Search
           </button>
         </div>
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap px-2 py-2 mx-6">
           {filteredList.map((restaurant) => {
             return (
               <Link

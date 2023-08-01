@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 
 
 let Header = () => {
@@ -10,7 +10,7 @@ let Header = () => {
 
   return (
     <>
-      <header className="flex justify-between shadow-lg bg-pink-100">
+      <header className="flex justify-between shadow-lg bg-pink-200">
         <div className="logo-container">
           <img
             className="w-24 m-1 p-1"
