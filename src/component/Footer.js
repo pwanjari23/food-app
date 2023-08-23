@@ -1,8 +1,8 @@
 const Footer = () => {
     return (
-      <div className="flex justify-between shadow-lg bg-pink-100 h-24 text-lg font-bold p-2">
-        Created By:Pratiksha Wanjari
-        <h2 className="text-lg font-bold p-10">MOOD FOOD</h2>
+      <div className="flex justify-between shadow-lg  h-24 text-lg font-bold p-2" style={{backgroundImage:"url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDPlzXDZgnrXNCYD46k7QDwx-jg2VxD-KgEQ&usqp=CAU')"}}>
+          
+        
       </div>
     );
   };

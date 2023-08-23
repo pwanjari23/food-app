@@ -8,7 +8,7 @@ let RestroCard_1 = ({
   cloudinaryImageId,
 }) => {
   return (
-    <div className="m-4 p-4 w-[250px] h-[450px] hover:bg-gray-200 bg-slate-100">
+    <div className="m-4 p-4 w-[250px] h-[450px] bg-gray-200 ">
       <img
         className="rounded-md"
         src={

@@ -15,7 +15,7 @@ const Cart = () => {
     }
 
     return (
-        <div className='m-32 p-32 text-center '>
+        <div className='m-16 p-16 text-center min-h-screen'>
             <h1 className='text-3xl font-bold'>Cart🛒</h1>
             <div>
                 {cartItems.length === 0 && <h1 className='font-bold text-xl p-4 '>Your cart is empty!!!! Please add items in your cart.....</h1>}
