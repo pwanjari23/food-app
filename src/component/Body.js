@@ -25,28 +25,27 @@ let Body = () => {
     );
 
     const json = await data.json();
-
-    setListOfRestro(json?.data?.cards[2]?.data?.data?.cards);
+    // console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants, "data");
+    setListOfRestro(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     // console.log(json?.data?.cards[2]?.data?.data?.cards, "setlistRestrodata");
-    setfilteredList(json?.data?.cards[2]?.data?.data?.cards);
+    setfilteredList(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
-  console.log("body");
+  console.log(filteredList);
 
- 
-  
 
-  return ListOfRestro.length === 0 ? (
-    <Loading />
-  ) : (
-    <>
-      <div className="body">
+
+  if (ListOfRestro === 0) {
+    return <Loading />
+  } else {
+    return <>
+      <div className="body" style={{backgroundImage:"url('')"}}>
         <div className="p-2 m-2">
           <button
             className="search-btn m-4 px-4 py-2 bg-green-100 "
             value={filteredList}
             onClick={() => {
               const setfilteredList1 = ListOfRestro.filter(
-                (res) => res.data.avgRating > 4
+                (res) => res.info.avgRating > 4
               );
 
               setfilteredList(setfilteredList1);
@@ -68,7 +67,7 @@ let Body = () => {
             value={filteredList}
             onClick={() => {
               const filteredData = ListOfRestro.filter((res) =>
-                res.data.name.toLowerCase().includes(searchText.toLowerCase())
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
               setfilteredList(filteredData);
             }}
@@ -77,18 +76,18 @@ let Body = () => {
           </button>
         </div>
         <div className="flex flex-wrap px-2 py-2 mx-6">
-          {filteredList.map((restaurant) => {
+          {filteredList?.map((restaurant) => {
             return (
               <Link
-                key={restaurant.data.id}
-                to={"/restaurant/" + restaurant.data.id}
+                key={restaurant.info.id}
+                to={"/restaurant/" + restaurant.info.id}
               >
 
-                  {/**if restaurant is promoted  then add promoted label in it */
-                  restaurant.data.promoted ? (
-                    <RestaurantCardPromoted {...restaurant.data} />
+                {/**if restaurant is promoted  then add promoted label in it */
+                  restaurant.info.promoted ? (
+                    <RestaurantCardPromoted {...restaurant.info} />
                   ) : (
-                    <RestroCard_1 {...restaurant.data} />
+                    <RestroCard_1 {...restaurant.info} />
                   )}
 
               </Link>
@@ -97,7 +96,7 @@ let Body = () => {
         </div>
       </div>
     </>
-  );
+  };
 };
 
 export default Body;

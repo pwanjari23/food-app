@@ -29,3 +29,9 @@ Your app is ready to be deployed!
 
 <!-- redux toolkit -->
 install  @reduxjs/toolkit
+
+
+
+ListOfRestro.length === 0 ? (
+    <Loading />
+  ) : (

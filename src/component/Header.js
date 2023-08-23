@@ -13,8 +13,8 @@ let Header = () => {
       <header className="flex justify-between shadow-lg bg-pink-200">
         <div className="logo-container">
           <img
-            className="w-24 m-1 p-1"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXf_R-yYdjq2AffaM2NxAatuYC_Z08MkweEw&usqp=CAU"
+            className="w-24 m-2 p-2"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX3wPQ-vTop-U60jVVeNhj5nZclIxeJoTLjA&usqp=CAU"
           />
         </div>
         <div className="flex items-center">
@@ -30,7 +30,7 @@ let Header = () => {
             </li>
             <li className="px-4 font-bold text-lg cursor-pointer"><Link to="/cart">Cart({cartItems.length})</Link></li>
 
-            <button
+            {/* <button
               className="font-bold text-lg"
               onClick={() => {
                 btnNameReact === "Login"
@@ -39,7 +39,7 @@ let Header = () => {
               }}
             >
               {btnNameReact}
-            </button>
+            </button> */}
           </ul>
         </div>
       </header>

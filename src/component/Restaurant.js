@@ -8,7 +8,7 @@ let RestroCard_1 = ({
   cloudinaryImageId,
 }) => {
   return (
-    <div className="m-4 p-4 w-[250px] hover:bg-gray-200 bg-slate-100">
+    <div className="m-4 p-4 w-[250px] h-[450px] hover:bg-gray-200 bg-slate-100">
       <img
         className="rounded-md"
         src={
@@ -18,9 +18,8 @@ let RestroCard_1 = ({
       />
       <h2 className="font-bold py-2 text-lg"> {name}</h2>
       <h4 className="p-1"> {cuisines.join(" ,")} </h4>
-      <h4 className="p-1">{avgRating} rating</h4>
-      <h4 className="p-1">{deliveryTime} minutes</h4>
-      <h4 className="p-1">Rs.{costForTwo / 100} for two </h4>
+      <h4 className="p-1">⭐{avgRating} </h4>
+      <h4 className="p-1">{costForTwo} </h4>
     </div>
   );
 };
